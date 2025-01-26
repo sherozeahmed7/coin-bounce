@@ -4,8 +4,8 @@ const {Schema} = mongoose;
 const blogSchema = new Schema ({
     title: {type: String, required: true},
     content: {type: String, required: true},
-    photopath: {type: String, required: true},
-    author: {type: mongoose.SchemaType.ObjectId, ref: "users"}
+    photoPath: {type: String, required: true},
+    author: {type: mongoose.Schema.Types.ObjectId, ref: "User"}
 },
 {timestamps:true}
 );

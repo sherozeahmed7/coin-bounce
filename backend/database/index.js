@@ -3,6 +3,7 @@ const {MONGODB_CONNECTION_STRING} = require('../config/index')
 
 
 // const connectionString = "mongodb+srv://coin-bounce:coinbounce@admin.tqcr1.mongodb.net/coin-bounce?retryWrites=true&w=majority&appName=admin";
+
 // const connectionString = MONGODB_CONNECTION_STRING;
 
 
