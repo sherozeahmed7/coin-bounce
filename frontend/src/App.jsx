@@ -1,12 +1,17 @@
 import styles from "./App.module.css";
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./Navbar/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Footer from "./components/Footer/Footer";
+import Footer from "./Footer/Footer";
 import Home from "./components/pages/Home/Home";
-import Protected from "./components/Protected/Protected";
+import Protected from "./Protected/Protected";
+import Error from "./components/pages/Error/Error";
+import Login from "./components/pages/Login/Login"
+import { useSelector } from "react-redux";
+import  Signup  from "./components/pages/signup/signup";
+import Crypto from "./components/pages/Crypto/Crypto";
 
 function App() {
-  const isAuth = false;;
+  const isAuth = useSelector(state => state.user.auth);
   return (
     <>
       <div className={styles.container}>
@@ -29,8 +34,8 @@ function App() {
                 exact
                 element={
                   <div className={styles.main}>
-                    crypto page
-                    {/* <Crypto /> */}
+                
+                    <Crypto />
                   </div>
                 }
               />
@@ -63,8 +68,8 @@ function App() {
                 exact
                 element={
                   <div className={styles.main}>
-                    login page
-                    {/* <Login /> */}
+                   
+                    <Login />
                   </div>
                 }
               />
@@ -73,10 +78,19 @@ function App() {
                 exact
                 element={
                   <div className={styles.main}>
-                    signup page
-                    {/* <Signup /> */}
+                    <Signup />
                   </div>
                 }
+              />
+
+              <Route
+              path="*"
+              exact
+              element={
+                <div className={styles.main}>
+                  <Error/>
+                </div>
+              }
               />
             </Routes>
             <Footer />

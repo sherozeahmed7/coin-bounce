@@ -4,7 +4,7 @@ import styles from "./Footer.module.css"
 const Footer = () => {
   return (
     <div>
-      <p className={styles.footer}>&Copy CoinBounce 2025</p>
+      <p className={styles.footer}> &copy; CoinBounce 2025</p>
     </div>
   )
 }
